@@ -1,4 +1,11 @@
+/**
+ * The encoder that is used.
+ */
 const encoder = new TextEncoder();
+
+/**
+ * The decoder that is used.
+ */
 const decoder = new TextDecoder();
 
 /**

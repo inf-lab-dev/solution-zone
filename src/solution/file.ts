@@ -1,4 +1,4 @@
-import { decrypt, encrypt } from './encryption';
+import { decrypt, encrypt } from './encryption.js';
 
 /**
  * A solution that has been encrypted.

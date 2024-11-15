@@ -1,3 +1,3 @@
-export * from './solution/file';
-export * from './ui/monaco';
-export * from './ui/vite';
+export * from './solution/file.js';
+export * from './ui/monaco.js';
+export * from './ui/vite.js';

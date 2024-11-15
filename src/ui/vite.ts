@@ -1,4 +1,4 @@
-import { WorkerClass, WorkerOptions } from './monaco';
+import { WorkerClass, WorkerOptions } from './monaco.js';
 
 /**
  * Creates {@link WorkerOptions} using dynamically imported Vite modules.
