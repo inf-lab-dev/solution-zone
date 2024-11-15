@@ -8,7 +8,7 @@
         "build": "tsc",
         "lint": "eslint .",
         "format": "prettier --write .",
-        "postinstall": "tsc"
+        "postinstall": "npm run build"
     },
     "author": "inf-lab.dev",
     "license": "MIT",
