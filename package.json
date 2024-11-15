@@ -1,8 +1,7 @@
 {
     "name": "solution-zone",
     "version": "1.0.0",
-    "module": "true",
-    "main": "dist/index.js",
+    "module": "dist/index.js",
     "types": "dist/index.d.ts",
     "scripts": {
         "build": "tsc",
