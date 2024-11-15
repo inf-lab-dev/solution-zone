@@ -118,7 +118,8 @@ export async function decryptFile(
     key: string,
     { version, language, code, annotations }: EncryptedSolution,
 ): Promise<DecryptedSolution> {
-    if (version === EncryptionVersion.V_1) {
+    // version 0 did not have an explicit version specifier (but works like v1)
+    if (version === EncryptionVersion.V_1 || version === undefined) {
         const decryptedAnnotations = await decrypt(key, annotations);
 
         return {
