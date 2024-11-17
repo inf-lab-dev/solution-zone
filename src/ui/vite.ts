@@ -1,13 +1,13 @@
-import { WorkerClass, WorkerOptions } from './monaco.js';
+import { WorkerOptions } from './monaco.js';
 
 /**
  * A module that houses a worker.
  */
 export interface WorkerModule {
     /**
-     * The default export, the worker.
+     * The default export, the worker url.
      */
-    default: WorkerClass;
+    default: string;
 }
 
 /**
