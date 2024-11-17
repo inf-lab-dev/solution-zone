@@ -1,21 +1,21 @@
-import { WorkerOptions } from './monaco.js';
+import { WorkerClass, WorkerOptions } from './monaco.js';
 
 /**
  * A module that houses a worker.
  */
 export interface WorkerModule {
     /**
-     * The default export, the worker url.
+     * The default export, the worker.
      */
-    default: string;
+    default: WorkerClass;
 }
 
 /**
  * Creates {@link WorkerOptions} using dynamically imported Vite modules.
- * As the `?worker&url` import-syntax is only supported for userland code, the imports have to be done manually.
+ * As the `?worker` import-syntax is only supported for userland code, the imports have to be done manually.
  *
- * The `typescript` worker parameter is optional, as in various Nuxt and Vite environments the typescript worker cannot be loaded
- * reliably due to a Vite/Rollup bug. Thus it is just skipped then.
+ * **The `typescript` worker parameter is optional, as in various Nuxt and Vite environments the typescript worker cannot be loaded
+ * reliably due to a Vite/Rollup bug. Thus it is just skipped then.**
  *
  * @param editor the editor worker
  * @param css the css worker

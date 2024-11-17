@@ -25,14 +25,24 @@ export interface Options {
  */
 export interface WorkerOptions {
     /**
-     * The main editor worker url.
+     * The main editor worker.
      */
-    editor: string;
+    editor: WorkerClass;
 
     /**
-     * Any worker url for an abitiary language, if none is present the {@link editor} will be used.
+     * Any worker for an abitiary language, if none is present the {@link editor} will be used.
      */
-    [label: string]: string;
+    [label: string]: WorkerClass;
+}
+
+/**
+ * Any class that can be instantiated to be a {@link Worker}.
+ */
+export interface WorkerClass {
+    /**
+     * Instantiates the worker.
+     */
+    new (): Worker;
 }
 
 /**
@@ -48,12 +58,12 @@ export type Editor = [typeof monaco, monaco.editor.IStandaloneCodeEditor];
  */
 function initializeEnvironment(options: WorkerOptions) {
     self.MonacoEnvironment = {
-        getWorkerUrl(_: unknown, label: string) {
+        getWorker(_: unknown, label: string) {
             if (label in options) {
-                return options[label];
+                return new options[label]();
             }
 
-            return options.editor;
+            return new options.editor();
         },
     };
 }
