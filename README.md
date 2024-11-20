@@ -1,6 +1,6 @@
 # solution-zone
 
-JavaScript package that encrypts and renders our solutions in the Browser.
+JavaScript package that encrypts our solutions in the Browser.
 
 ## Usage
 
