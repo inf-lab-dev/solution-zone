@@ -74,7 +74,7 @@ async function importKey(key: string): Promise<CryptoKey> {
  */
 async function deriveKey(
     passwordKey: CryptoKey,
-    salt: Uint8Array,
+    salt: BufferSource,
     usage: KeyUsage,
 ): Promise<CryptoKey> {
     return crypto.subtle.deriveKey(
