@@ -17,7 +17,7 @@ export async function encryptFile(
     { title, files }: DecryptedSolution,
 ): Promise<EncryptedSolution> {
     return {
-        version: FileVersion.V_1,
+        version: FileVersion.V_2,
         title,
         files: await Promise.all(
             files.map(async ({ name, language, code, annotations }) => {
